@@ -1,0 +1,10 @@
+.card {
+  position: relative;
+  width: 500px;
+  padding: 25px;
+  height: 50vh;
+  max-width: 85vw;
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
+}
