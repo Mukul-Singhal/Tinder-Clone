@@ -4,16 +4,29 @@ import { Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
 import Header from "./Component/header/Header";
+import ChatPage from "./Pages/chat-page/chat-page";
+import ChatScreen from "./Pages/chat-screen/chat-screen";
 import TinderCards from "./Component/tinder-cards/TinderCards";
+import SwipeButton from "./Component/swipe-button/SwipeButton";
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Switch>
-        <Route path="/" />
+        <Route path="/chat/:person">
+          <Header backbutton="/chat" />
+          <ChatScreen />
+        </Route>
+        <Route path="/chat">
+          <Header backbutton="/" />
+          <ChatPage />
+        </Route>
+        <Route path="/">
+          <Header />
+          <TinderCards />
+          <SwipeButton />
+        </Route>
       </Switch>
-      <TinderCards />
     </div>
   );
 }
